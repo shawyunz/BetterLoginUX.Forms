@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BetterLoginUX.Forms.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout BackgroundColor="#f5f5f5">
+        <Frame
+            Margin="20,60,20,20"
+            Padding="12"
+            VerticalOptions="Start"
+            BackgroundColor="#ffffff"
+            CornerRadius="0">
+            <StackLayout>
+                <Label
+                    Margin="0,4"
+                    Text="Create account"
+                    FontAttributes="Bold"
+                    FontSize="22"
+                    TextColor="Black" />
+                <Label
+                    Text="Email"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="Black" />
+                <Frame
+                    HeightRequest="48"
+                    Padding="0,-8"
+                    BorderColor="#b4b7bb"
+                    HasShadow="False">
+                    <Entry
+                        IsSpellCheckEnabled="False"
+                        IsTextPredictionEnabled="False"
+                        Keyboard="Email"
+                        FontSize="14" />
+                </Frame>
+                <Label
+                    Margin="0,8,0,0"
+                    Text="Password"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="Black" />
+                <Frame
+                    HeightRequest="48"
+                    Padding="0,-8"
+                    BorderColor="#b4b7bb"
+                    HasShadow="False">
+                    <Entry
+                        IsSpellCheckEnabled="False"
+                        IsTextPredictionEnabled="False"
+                        Keyboard="Text"
+                        FontSize="14" />
+                </Frame>
+
+                <Button
+                    HeightRequest="36"
+                    Margin="0,28,0,12"
+                    BackgroundColor="#106ba3"
+                    Text="Create account"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="White"
+                    TextTransform="None" />
+
+                <BoxView
+                    HeightRequest="0.5"
+                    Margin="-12,0"
+                    BackgroundColor="Gray"
+                    Visual="Default" />
+                <Button
+                    HeightRequest="36"
+                    Margin="0,12,0,16"
+                    BackgroundColor="#f5f8fa"
+                    BorderColor="#d6d7d8"
+                    BorderWidth="1"
+                    Text="Sign up with Google"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextTransform="None" />
+            </StackLayout>
+        </Frame>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Have an account?" />
+            <Label
+                Text="Log in"
+                TextColor="#106ba3"
+                TextDecorations="Underline" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
