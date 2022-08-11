@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\google.png" />
+    <None Remove="Assets\view.png" />
+    <None Remove="Assets\viewhide.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\google.png" />
+    <EmbeddedResource Include="Assets\view.png" />
+    <EmbeddedResource Include="Assets\viewhide.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
