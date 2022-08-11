@@ -5,14 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <StackLayout BackgroundColor="#f5f5f5">
         <Frame
-            Margin="20,60,20,20"
-            Padding="12"
+            Margin="40,60,40,20"
+            Padding="20,12"
             VerticalOptions="Start"
             BackgroundColor="#ffffff"
-            CornerRadius="0">
+            BorderColor="#b4b7bb"
+            CornerRadius="0"
+            IsClippedToBounds="True"
+            HasShadow="False">
             <StackLayout>
                 <Label
-                    Margin="0,4"
+                    Margin="0,-2,0,6"
                     Text="Create account"
                     FontAttributes="Bold"
                     FontSize="22"
@@ -23,7 +26,7 @@
                     FontSize="12"
                     TextColor="Black" />
                 <Frame
-                    HeightRequest="48"
+                    HeightRequest="46"
                     Padding="0,-8"
                     BorderColor="#b4b7bb"
                     HasShadow="False">
@@ -31,6 +34,7 @@
                         IsSpellCheckEnabled="False"
                         IsTextPredictionEnabled="False"
                         Keyboard="Email"
+                        ReturnType="Next"
                         FontSize="14" />
                 </Frame>
                 <Label
@@ -40,7 +44,7 @@
                     FontSize="12"
                     TextColor="Black" />
                 <Frame
-                    HeightRequest="48"
+                    HeightRequest="46"
                     Padding="0,-8"
                     BorderColor="#b4b7bb"
                     HasShadow="False">
@@ -48,12 +52,13 @@
                         IsSpellCheckEnabled="False"
                         IsTextPredictionEnabled="False"
                         Keyboard="Text"
+                        ReturnType="Done"
                         FontSize="14" />
                 </Frame>
 
                 <Button
                     HeightRequest="36"
-                    Margin="0,28,0,12"
+                    Margin="0,22,0,12"
                     BackgroundColor="#106ba3"
                     Text="Create account"
                     FontAttributes="Bold"
@@ -61,11 +66,13 @@
                     TextColor="White"
                     TextTransform="None" />
 
-                <BoxView
-                    HeightRequest="0.5"
-                    Margin="-12,0"
-                    BackgroundColor="Gray"
-                    Visual="Default" />
+                <StackLayout>
+                    <BoxView
+                        HeightRequest="0.5"
+                        Margin="-20,0"
+                        BackgroundColor="#b4b7bb" />
+                </StackLayout>
+
                 <Button
                     HeightRequest="36"
                     Margin="0,12,0,16"
@@ -79,9 +86,10 @@
             </StackLayout>
         </Frame>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Have an account?" />
+            <Label Text="Have an account?" FontSize="12" />
             <Label
                 Text="Log in"
+                FontSize="12"
                 TextColor="#106ba3"
                 TextDecorations="Underline" />
         </StackLayout>
