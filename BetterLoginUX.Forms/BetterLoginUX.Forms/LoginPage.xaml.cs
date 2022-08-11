@@ -7,6 +7,15 @@ namespace BetterLoginUX.Forms
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = this;
+        }
+
+        public bool HidePassword { get; set; } = true;
+
+        private void ViewPassword_Tapped(object sender, System.EventArgs e)
+        {
+            HidePassword = !HidePassword;
+            OnPropertyChanged(nameof(HidePassword));
         }
     }
 }

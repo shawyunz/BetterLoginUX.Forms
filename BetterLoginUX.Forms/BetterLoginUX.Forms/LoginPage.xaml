@@ -49,12 +49,33 @@
                     Padding="0,-8"
                     BorderColor="#b4b7bb"
                     HasShadow="False">
-                    <Entry
-                        IsSpellCheckEnabled="False"
-                        IsTextPredictionEnabled="False"
-                        Keyboard="Text"
-                        ReturnType="Done"
-                        FontSize="14" />
+                    <Grid>
+                        <Entry
+                            x:Name="EntryPassword"
+                            IsPassword="{Binding HidePassword, Mode=TwoWay}"
+                            IsSpellCheckEnabled="False"
+                            IsTextPredictionEnabled="False"
+                            Keyboard="Plain"
+                            ReturnType="Done"
+                            FontSize="14" />
+                        <Image
+                            WidthRequest="20"
+                            Margin="10,0"
+                            HorizontalOptions="End"
+                            Source="{local:ImageResource BetterLoginUX.Forms.Assets.view.png}">
+                            <Image.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding HidePassword, Mode=TwoWay}"
+                                    TargetType="Image"
+                                    Value="True">
+                                    <Setter Property="Source" Value="{local:ImageResource BetterLoginUX.Forms.Assets.viewhide.png}" />
+                                </DataTrigger>
+                            </Image.Triggers>
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ViewPassword_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
                 </Frame>
 
                 <Button
