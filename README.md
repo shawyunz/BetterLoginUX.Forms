@@ -16,8 +16,8 @@ Original blog: [15 Tips for Better Signup / Login UX](https://www.learnui.de
 - [x] 7. Use button text to expose the value waiting for users on the other side
 - [x] 8. Allow for single sign-on
 - [x] 9. Save a click by notifying users they agree to the terms of service
-- [ ] 10. Use different terms for “sign in” and “sign up”
-- [ ] 11. Allow easy switching between “sign in” and “sign up”
+- [x] 10. Use different terms for “sign in” and “sign up”
+- [x] 11. Allow easy switching between “sign in” and “sign up”
 - [x] 12. Log in with email, not username
 - [x] 13. If the user guesses an invalid password, say why it’s invalid
 - [x] 14. Remember typed values between password attempts

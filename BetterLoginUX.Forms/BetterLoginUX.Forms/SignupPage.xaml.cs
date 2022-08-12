@@ -3,17 +3,18 @@ using Xamarin.Forms;
 
 namespace BetterLoginUX.Forms
 {
-    public partial class LoginPage : ContentPage
+    public partial class SignupPage : ContentPage
     {
-        public LoginPage()
+        public SignupPage(string email)
         {
+            Email = email;
             InitializeComponent();
             BindingContext = this;
         }
 
         public string Email { get; set; }
         public bool HidePassword { get; set; } = true;
-        public bool IsErrorEmail { get; set; } = true;
+        public bool IsErrorEmail { get; set; } = false;
         public bool IsErrorPassword { get; set; } = false;
         public bool IsNotErrorPassword => !IsErrorPassword;
         public string Password { get; set; }
@@ -55,9 +56,9 @@ namespace BetterLoginUX.Forms
             }
         }
 
-        private async void NavigateToSignup(object sender, System.EventArgs e)
+        private async void NavigateToLogin(object sender, System.EventArgs e)
         {
-            await Navigation.PushModalAsync(new SignupPage(Email));
+            await Navigation.PopModalAsync();
         }
 
         private void ViewPassword_Tapped(object sender, System.EventArgs e)

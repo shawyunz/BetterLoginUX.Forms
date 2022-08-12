@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

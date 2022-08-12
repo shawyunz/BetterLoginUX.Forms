@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="BetterLoginUX.Forms.LoginPage"
+    x:Class="BetterLoginUX.Forms.SignupPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BetterLoginUX.Forms">
@@ -16,7 +16,7 @@
             <StackLayout>
                 <Label
                     Margin="0,-2,0,6"
-                    Text="Log in"
+                    Text="Create account"
                     FontAttributes="Bold"
                     FontSize="22"
                     TextColor="Black" />
@@ -64,27 +64,17 @@
                         TextColor="#b33e3e" />
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                        x:Name="LabelPassword"
-                        Margin="0,8,0,0"
-                        HorizontalOptions="StartAndExpand"
-                        Text="Password"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        TextColor="Black">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="LabelPassword_Tapped" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Label
-                        VerticalOptions="End"
-                        Text="Forgot your password?"
-                        FontSize="12"
-                        TextColor="#106ba3"
-                        TextDecorations="Underline" />
-                </StackLayout>
-
+                <Label
+                    x:Name="LabelPassword"
+                    Margin="0,8,0,0"
+                    Text="Password"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LabelPassword_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
                 <Frame
                     HeightRequest="46"
                     Padding="6,-8"
@@ -130,14 +120,20 @@
                     </Grid>
                 </Frame>
 
+                <Label
+                    IsVisible="{Binding IsNotErrorPassword}"
+                    Text="Your password must be at least 6 characters."
+                    FontSize="10"
+                    TextColor="#5c707f" />
+
                 <StackLayout
                     IsVisible="{Binding IsErrorPassword}"
-                    HeightRequest="42"
+                    HeightRequest="32"
                     BackgroundColor="#f8d7d7">
                     <Label
                         Padding="12,0"
                         VerticalOptions="CenterAndExpand"
-                        Text="Incorrect email or password. &#x0a;Password must be at least 6 characters"
+                        Text="Password must be at least 6 characters"
                         FontSize="12"
                         TextColor="#b33e3e" />
                 </StackLayout>
@@ -146,7 +142,7 @@
                     HeightRequest="36"
                     Margin="0,12,0,12"
                     BackgroundColor="#106ba3"
-                    Text="Log in"
+                    Text="Create account"
                     FontAttributes="Bold"
                     FontSize="12"
                     TextColor="White"
@@ -167,23 +163,48 @@
                     BorderColor="#d6d7d8"
                     BorderWidth="1"
                     ImageSource="{local:ImageResource BetterLoginUX.Forms.Assets.google.png}"
-                    Text="Log in with Google"
+                    Text="Sign up with Google"
                     FontAttributes="Bold"
                     FontSize="12"
                     TextTransform="None" />
             </StackLayout>
         </Frame>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="No account?" FontSize="12" />
+            <Label Text="Have an account?" FontSize="12" />
             <Label
-                Text="Sign up"
+                Text="Log in"
                 FontSize="12"
                 TextColor="#106ba3"
                 TextDecorations="Underline">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="NavigateToSignup" />
+                    <TapGestureRecognizer Tapped="NavigateToLogin" />
                 </Label.GestureRecognizers>
             </Label>
+        </StackLayout>
+
+        <StackLayout
+            Margin="0,0,0,-4"
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand">
+            <Label Text="By signing up, you agree to our" FontSize="12" />
+            <Label
+                Text="Terms of Service"
+                FontSize="12"
+                TextColor="#106ba3"
+                TextDecorations="Underline" />
+        </StackLayout>
+        <StackLayout
+            Margin="0,0,0,12"
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            VerticalOptions="End">
+            <Label Text="and" FontSize="12" />
+            <Label
+                Text="Privacy Policy"
+                FontSize="12"
+                TextColor="#106ba3"
+                TextDecorations="Underline" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
