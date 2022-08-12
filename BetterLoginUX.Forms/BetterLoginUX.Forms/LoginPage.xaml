@@ -8,7 +8,6 @@
         <Frame
             Margin="40,60,40,20"
             Padding="20,12"
-            VerticalOptions="Start"
             BackgroundColor="#ffffff"
             BorderColor="#b4b7bb"
             CornerRadius="0"
@@ -21,6 +20,7 @@
                     FontAttributes="Bold"
                     FontSize="22"
                     TextColor="Black" />
+
                 <Label
                     Text="Email"
                     FontAttributes="Bold"
@@ -28,27 +28,66 @@
                     TextColor="Black" />
                 <Frame
                     HeightRequest="46"
-                    Padding="0,-8"
+                    Padding="6,-8"
                     BorderColor="#b4b7bb"
                     HasShadow="False">
+                    <Frame.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsFocused, Source={x:Reference EntryEmail}}"
+                            TargetType="Frame"
+                            Value="True">
+                            <Setter Property="BorderColor" Value="#5697be" />
+                            <Setter Property="BackgroundColor" Value="#fcfeff" />
+                        </DataTrigger>
+                    </Frame.Triggers>
                     <Entry
+                        x:Name="EntryEmail"
                         IsSpellCheckEnabled="False"
                         IsTextPredictionEnabled="False"
                         Keyboard="Email"
                         ReturnType="Next"
-                        FontSize="14" />
+                        FontSize="14"
+                        Focused="EntryEmail_Focused"
+                        Unfocused="EntryEmail_Unfocused" />
                 </Frame>
+
+                <StackLayout
+                    IsVisible="{Binding IsErrorEmail}"
+                    HeightRequest="32"
+                    BackgroundColor="#f8d7d7">
+                    <Label
+                        Padding="12,0"
+                        VerticalOptions="CenterAndExpand"
+                        Text="Uh oh - this email address looks wrong."
+                        FontSize="12"
+                        TextColor="#b33e3e" />
+                </StackLayout>
+
                 <Label
+                    x:Name="LabelPassword"
                     Margin="0,8,0,0"
                     Text="Password"
                     FontAttributes="Bold"
                     FontSize="12"
-                    TextColor="Black" />
+                    TextColor="Black">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LabelPassword_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
                 <Frame
                     HeightRequest="46"
-                    Padding="0,-8"
+                    Padding="6,-8"
                     BorderColor="#b4b7bb"
                     HasShadow="False">
+                    <Frame.Triggers>
+                        <DataTrigger
+                            Binding="{Binding IsFocused, Source={x:Reference EntryPassword}}"
+                            TargetType="Frame"
+                            Value="True">
+                            <Setter Property="BorderColor" Value="#5697be" />
+                            <Setter Property="BackgroundColor" Value="#fcfeff" />
+                        </DataTrigger>
+                    </Frame.Triggers>
                     <Grid>
                         <Entry
                             x:Name="EntryPassword"
@@ -57,11 +96,13 @@
                             IsTextPredictionEnabled="False"
                             Keyboard="Plain"
                             ReturnType="Done"
+                            Text="{Binding Password}"
                             FontSize="14" />
                         <Image
                             WidthRequest="20"
-                            Margin="10,0"
+                            Margin="6,0"
                             HorizontalOptions="End"
+                            Opacity="0.7"
                             Source="{local:ImageResource BetterLoginUX.Forms.Assets.view.png}">
                             <Image.Triggers>
                                 <DataTrigger
@@ -78,15 +119,34 @@
                     </Grid>
                 </Frame>
 
+                <Label
+                    IsVisible="{Binding IsNotErrorPassword}"
+                    Text="Your password must be at least 6 characters."
+                    FontSize="10"
+                    TextColor="#5c707f" />
+
+                <StackLayout
+                    IsVisible="{Binding IsErrorPassword}"
+                    HeightRequest="32"
+                    BackgroundColor="#f8d7d7">
+                    <Label
+                        Padding="12,0"
+                        VerticalOptions="CenterAndExpand"
+                        Text="Password must be at least 6 characters"
+                        FontSize="12"
+                        TextColor="#b33e3e" />
+                </StackLayout>
+
                 <Button
                     HeightRequest="36"
-                    Margin="0,22,0,12"
+                    Margin="0,12,0,12"
                     BackgroundColor="#106ba3"
                     Text="Create account"
                     FontAttributes="Bold"
                     FontSize="12"
                     TextColor="White"
-                    TextTransform="None" />
+                    TextTransform="None"
+                    Clicked="Button_Clicked" />
 
                 <StackLayout>
                     <BoxView
@@ -112,6 +172,31 @@
             <Label Text="Have an account?" FontSize="12" />
             <Label
                 Text="Log in"
+                FontSize="12"
+                TextColor="#106ba3"
+                TextDecorations="Underline" />
+        </StackLayout>
+
+        <StackLayout
+            Margin="0,0,0,-4"
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand">
+            <Label Text="By signing up, you agree to our" FontSize="12" />
+            <Label
+                Text="Terms of Service"
+                FontSize="12"
+                TextColor="#106ba3"
+                TextDecorations="Underline" />
+        </StackLayout>
+        <StackLayout
+            Margin="0,0,0,12"
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            VerticalOptions="End">
+            <Label Text="and" FontSize="12" />
+            <Label
+                Text="Privacy Policy"
                 FontSize="12"
                 TextColor="#106ba3"
                 TextDecorations="Underline" />
