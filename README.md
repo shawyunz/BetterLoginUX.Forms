@@ -1,12 +1,16 @@
 # Better Login UX
 Following UX tips to creating usable signup and login forms/pages in Xamarin.Forms.
 
-
-
 Original blog: [15 Tips for Better Signup / Login UX](https://www.learnui.design/blog/tips-signup-login-ux.html) from **Erik D. Kennedy**, 2021
 
 
 
+## Demo
+<img src="https://www.learnui.design/blog/img/signup-tips/first-field-autofocus.png" alt="autofocus" style="zoom:33%;" />
+
+
+
+## Tasks
 - [x] 1. Autofocus on the first field
 - [x] 2. Use specialized mobile keyboards
 - [x] 3. Validate fields immediately
